@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <h1>Thanks for getting 3D scanned, <%= @user.name %></h1>
+
+    <% if ScanBooth::Application.config.scan_viewer_enabled %>
+    <h2><a href="<%=@scan_view_url%>">View your scan on sketchfab.com</a></h2>
+    <% end %>
+
+    <% if ScanBooth::Application.config.scan_download_enabled %>
+    <h3><a href="<%=@scan_download_url%>">Download a copy your scan.</a></h3>
+    <% end %>
+
+    <% if ScanBooth::Application.config.scan_viewer_enabled %>
+    <p><em>Please note: Your scan will only be viewable on sketchfab for 3 months.</em></p>
+
+    <h3><a href="http://twitter.com/intent/tweet?url=<%=u @scan_view_url%>&text=<%=u ScanBooth::Application.config.tweet[:text]%>&hashtags=<%=u ScanBooth::Application.config.tweet[:hashtags]%>" target="_blank">Share scan on twitter</a></h3>
+
+
+    <h3><a href="http://www.facebook.com/share.php?u=<%=@scan_view_url%>" target="_blank">Share scan on facebook</a></h3>
+    <% end %>
+
+    <p><%= ScanBooth::Application.config.scan_mail[:thanks_message] %></p>
+
+    <p>
+      Sincerely,<br/>
+      <a href="mailto:<%=ScanBooth::Application.config.contact[:email]%>?subject=<%=u ScanBooth::Application.config.scan_mail[:subject]%>"><%=ScanBooth::Application.config.contact[:name]%></a>
+    </p>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @user.name %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @user.email %>
+</p>
+
+<p>
+  <b>Scanned at:</b>
+  <%= @user.created_at %>
+</p>
+
+<p class="filename">
+  <%= @user.scan_file %>
+</p>
+
+<%= link_to 'New Scan', welcome_index_path %>

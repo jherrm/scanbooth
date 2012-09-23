@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  email: MyString
+  scan_file: MyString
+  external_view_id: MyString
+
+two:
+  name: MyString
+  email: MyString
+  scan_file: MyString
+  external_view_id: MyString

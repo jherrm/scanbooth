@@ -1,0 +1,20 @@
+Thanks for getting 3D scanned, <%= @user.name %>
+===============================================
+
+<% if ScanBooth::Application.config.scan_viewer_enabled %>
+View your scan here: <%=@scan_view_url%>
+<% end %>
+
+<% if ScanBooth::Application.config.scan_download_enabled %>
+Download a copy your scan here: <%=@scan_download_url%>">
+<% end %>
+
+<% if ScanBooth::Application.config.scan_viewer_enabled %>
+Please note: Your scan will only be viewable on sketchfab for 3 months.
+<% end %>
+
+<%= ScanBooth::Application.config.scan_mail[:thanks_message] %>
+
+Sincerely,
+<%=ScanBooth::Application.config.contact[:name]%>
+<%=ScanBooth::Application.config.contact[:email]%>
