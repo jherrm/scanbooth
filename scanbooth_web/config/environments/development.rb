@@ -55,8 +55,8 @@ ScanBooth::Application.configure do
     thanks_message: "We hope you had a great time getting scanned!"
   }
 
-  # Absolute path to location of the scans to upload to external sites
   config.scans_path = "/scans"
+  # Absolute path to the scans to upload for external sites and printing
   config.scan_extension = "stl"
 
   config.scan_viewer_enabled = false
