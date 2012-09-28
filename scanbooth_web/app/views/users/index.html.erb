@@ -5,7 +5,10 @@
     <th>Name</th>
     <th>Email</th>
     <th>Scan file</th>
-    <th>External</th>
+    <th>External View Id</th>
+    <th>External Download Id</th>
+    <th>Printed</th>
+    <th>Mailed</th>
     <th></th>
     <th></th>
     <th></th>
@@ -17,6 +20,9 @@
     <td><%= user.email %></td>
     <td><%= user.scan_file %></td>
     <td><%= user.external_view_id %></td>
+    <td><%= user.external_download_id %></td>
+    <td><%= user.printed %></td>
+    <td><%= user.mailed %></td>
     <td><%= link_to 'Show', user %></td>
     <td><%= link_to 'Edit', edit_user_path(user) %></td>
     <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>

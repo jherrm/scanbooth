@@ -49,7 +49,13 @@ module SketchfabUpload
     if data['success']
       user.external_view_id = data['id']
       user.save!
-      UserMailer.scan_email(user).deliver
+
+      if !user.mailed && ScanBooth::Application.config.scan_download_enabled && !user.external_download_id.blank?
+        puts 'mailing user from sketchfab'
+        UserMailer.scan_email(user).deliver
+        user.mailed = true
+        user.save!
+      end
       p "https://sketchfab.com/show/#{data['id']}"
     else
       p "Upload to sketchfab failed: #{response.body}"

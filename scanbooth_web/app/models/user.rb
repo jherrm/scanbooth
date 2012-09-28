@@ -1,11 +1,11 @@
 class User < ActiveRecord::Base
-  attr_accessible :name, :email, :scan_file, :external_view_id, :external_download_id
+  attr_accessible :name, :email, :scan_file, :mailed, :printed, :external_view_id, :external_download_id
   before_create :generate_filename
   after_create :async_upload_model
 
   def generate_filename
     self.scan_file = self.name.gsub(/[^a-z0-9\\-]/i,'')
-    self.scan_file =
+    self.scan_file = self.id if self.scan_file.blank?;
   end
 
   def scan_file_with_ext
