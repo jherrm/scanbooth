@@ -37,8 +37,8 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
-  # GET /users/1/scan_processed
-  def scan_processed
+  # GET /users/1/upload_and_mail
+  def upload_and_mail
     @user = User.find(params[:id])
     @user.async_upload_model
   end

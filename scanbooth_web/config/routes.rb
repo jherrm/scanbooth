@@ -9,7 +9,7 @@ ScanBooth::Application.routes.draw do
 
   resources :users do
     member do
-      get 'scan_processed'
+      get 'upload_and_mail'
     end
   end
 
