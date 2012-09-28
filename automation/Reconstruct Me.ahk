@@ -3,7 +3,7 @@
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
-; Scanbooth Stuff
+; ScanBooth Stuff
 
 ; Start ReconstructMe command line application
 Run "C:\ReconstructMe\Start ReconstructMe Record OpenNI.bat"
@@ -24,4 +24,4 @@ WinWaitClose
 Sleep 1000
 
 ; Go to the next step - move the
-Run C:\ScanBooth\move_scans.bat
+Run C:\ScanBooth\automation\move_scans.bat

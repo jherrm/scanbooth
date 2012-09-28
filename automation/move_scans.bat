@@ -7,9 +7,9 @@ set mytime=%mytime: =%
 
 :: Loop through all .ply files in the ReconstructMe folder
 for /r "C:\ReconstructMe" %%x in (*.ply) do (
-move "%%x" "C:\ScanBooth\raw_scans\%mydate%_%mytime%_%%~nx.ply"
+move "%%x" "C:\ScanBooth\scans\raw\%mydate%_%mytime%_%%~nx.ply"
 :: Clean the scans
-call clean_scan.bat "C:\ScanBooth\raw_scans\%mydate%_%mytime%_%%~nx.ply"
+call clean_scan.bat "C:\ScanBooth\scans\raw\%mydate%_%mytime%_%%~nx.ply"
 :: You can move the cleaned scans to a shared directory to continue editing or send to 3D printer
-move "C:\ScanBooth\cleaned_scans\%mydate%_%mytime%_%%~nx.ply.stl" "C:\ScanBooth\cleaned_scans\%mydate%_%mytime%_%%~nx.stl"
+move "C:\ScanBooth\scans\cleaned\%mydate%_%mytime%_%%~nx.ply.stl" "C:\ScanBooth\scans\cleaned\%mydate%_%mytime%_%%~nx.stl"
 )
