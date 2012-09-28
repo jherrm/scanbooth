@@ -6,8 +6,8 @@ require "json"
 
 module SketchfabUpload
   @queue = :upload
-  API_KEY = ""
   # Get your API key from your sketchfab account dashboard.
+  API_KEY = ScanBooth::Application.config.sketchfab[:api_key]
   URL = "https://api.sketchfab.com/model"
 
   def self.perform(user_id)
@@ -17,9 +17,8 @@ module SketchfabUpload
     path = [ScanBooth::Application.config.scans_path, filename].join('/')
     # thumbnail_filepath = [ScanBooth::Application.config.scans_path, filename<<".png"].join('/')
     title = user.name || filename
-    desc = ""
-    tags = ""
-
+    desc = ScanBooth::Application.config.sketchfab[:description]
+    tags = ScanBooth::Application.config.sketchfab[:tags]
 
     contents = Base64.encode64(File.read(path))
     # thumbnail = Base64.encode64(File.read(thumbnail_filepath))

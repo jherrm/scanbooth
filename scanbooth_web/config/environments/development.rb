@@ -61,9 +61,19 @@ ScanBooth::Application.configure do
 
   config.scan_viewer_enabled = false
   config.scan_view_url = "https://sketchfab.com/show/"
+  config.sketchfab = {
+    api_key: "",
+    description: "",
+    tags: ""
+  }
 
   config.scan_download_enabled = false
   config.scan_download_url = ""
+  config.ftp = {
+    server: "",
+    username: "",
+    password: ""
+  }
 
   config.contact_info = {
     name: '',

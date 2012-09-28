@@ -2,9 +2,9 @@ require 'net/ftp'
 
 module FtpUpload
   @queue = :upload
-  FTP_SERVER   = ""
-  FTP_USERNAME = ""
-  FTP_PASSWORD = ""
+  FTP_SERVER   = ScanBooth::Application.config.ftp[:server]
+  FTP_USERNAME = ScanBooth::Application.config.ftp[:username]
+  FTP_PASSWORD = ScanBooth::Application.config.ftp[:password]
 
   def self.perform(user_id)
 
