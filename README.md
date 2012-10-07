@@ -45,19 +45,19 @@ Installation and configuration
 Prerequisites:
 
   - Ruby 1.9.3, Rails 3
-  - AutoHotkey
-  - Meshlab
-  - ReconstructMe
-  - Redis
+  - [AutoHotkey](http://www.autohotkey.com)
+  - [Meshlab](http://meshlab.sourceforge.net)
+  - [ReconstructMe](http://reconstructme.net)
+  - [Redis](http://redis.io)
 
 Download this repository, save it to C:\ScanBooth. *You can place the folder elsewhere, but you'll have to change the paths in the automation scripts.*
 
 
 Change directory into the scanbooth_web folder, install the required gems, setup your database and start the rails server
 
-    > bundle install
-    > rake db:migrate
-    > rails s
+    $ bundle install
+    $ rake db:migrate
+    $ rails s
 
 *You should now be able to see the scanbooth app at [http://localhost:3000](http://localhost:3000)*
 
@@ -93,11 +93,11 @@ To enable ftp upload:
 
 Start redis
 
-    > redis-server
+    $ redis-server
 
 Start the resque worker
 
-    > QUEUE=* rake environment resque:work
+    $ QUEUE=* rake environment resque:work
 
 Start the upload process by going to [http://localhost:3000/users](http://localhost:3000/users) and clicking "Upload and Mail"
 
